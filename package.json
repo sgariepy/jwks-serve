@@ -1,0 +1,27 @@
+{
+  "name": "jwks-serve",
+  "version": "1.0.0",
+  "description": "Serving JWK public keys.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgariepy/jwks-serve.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgariepy/jwks-serve/issues"
+  },
+  "homepage": "https://github.com/sgariepy/jwks-serve#readme",
+  "dependencies": {
+    "jose": "^1.27.3",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27"
+  }
+}
