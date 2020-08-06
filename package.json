@@ -4,7 +4,9 @@
   "description": "Serving JWK public keys.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "serve -l 9743",
+    "redirect": "ngrok http 9743",
+    "jwt": "ts-node generate-jwt.ts"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,9 @@
   "homepage": "https://github.com/sgariepy/jwks-serve#readme",
   "dependencies": {
     "jose": "^1.27.3",
+    "ngrok": "^3.2.7",
+    "serve": "^11.3.2",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   },
   "devDependencies": {
