@@ -1,7 +1,7 @@
 import { JWK, JWT } from 'jose';
 import { readFileSync } from 'fs';
 
-const privateKey = readFileSync('./rsa-2048.mep');
+const privateKey = readFileSync('./jwtRS256.yek');
 
 const key = JWK.asKey(privateKey);
 
@@ -11,7 +11,8 @@ const payload = {
   nickname: 'jdoe',
   picture: 'https://via.placeholder.com/150',
   email: 'jdow@gmail.com',
-  email_verified: false
+  email_verified: false,
+  sub: "f6521dc6-7d8c-45f0-903d-4cc979b2e1ea"
 };
 
 const token = JWT.sign(payload, key, {
