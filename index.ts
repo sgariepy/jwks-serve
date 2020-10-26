@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.post('/auth/external/generate', async (request, response) => {
 
-  const privateKey = readFileSync('./jwtRS256.yek');
+  const privateKey = readFileSync('./jwtRS256.key');
   const key = JWK.asKey(privateKey);
 
   const payload = {
@@ -27,7 +27,7 @@ app.post('/auth/external/generate', async (request, response) => {
     algorithm: 'RS256',
     audience: ['urn:example:client'],
     issuer: 'https://op.example.com',    
-    expiresIn: '2 minutes',
+    expiresIn: '2 hours',
     header: {
       typ: 'JWT'
     }

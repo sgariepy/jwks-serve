@@ -31,3 +31,8 @@ Redirection for HTTPS.  Simple way to use a HTTPS endpoint, but not required:
 Generate valid JWT with private key:
 
     $ ts-node generate-jwt.ts
+
+Generate Private and Public keys:
+
+    $ ssh-keygen -t rsa -b 4096 -m PEM -f jwtRS256.key
+    $ openssl rsa -in jwtRS256.key -pubout -outform PEM -out jwtRS256.key.pub
