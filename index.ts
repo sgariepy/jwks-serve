@@ -10,23 +10,17 @@ app.use(express.json());
 
 app.post('/auth/external/generate', async (request, response) => {
 
-  const privateKey = readFileSync('./jwtRS256.key');
+  const env = request.body.env;
+
+  const privateKey = readFileSync(`./keys/jwtRS256.${env}.key`);
   const key = JWK.asKey(privateKey);
 
   const payload = {
-    'urn:example:claim': 'foo',
-    name: 'John Doe',
-    nickname: 'jdoe',
-    picture: 'https://via.placeholder.com/150',
-    email: 'jdow@gmail.com',
-    email_verified: false,
     sub: request.body.expectedExternalId
   };
 
   const token = JWT.sign(payload, key, {
     algorithm: 'RS256',
-    audience: ['urn:example:client'],
-    issuer: 'https://op.example.com',    
     expiresIn: '2 hours',
     header: {
       typ: 'JWT'
