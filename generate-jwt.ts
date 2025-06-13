@@ -1,7 +1,7 @@
 import { JWK, JWT } from 'jose';
 import { readFileSync } from 'fs';
 
-const privateKey = readFileSync('./jwtRS256.key');
+const privateKey = readFileSync('./keys/jwtRS256.key');
 
 const key = JWK.asKey(privateKey);
 

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Serving JWK public keys.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "serve": "serve -l 9743",
     "redirect": "ngrok http 9743",
@@ -21,16 +22,16 @@
   "homepage": "https://github.com/sgariepy/jwks-serve#readme",
   "dependencies": {
     "base64url": "^3.0.1",
-    "express": "^4.17.1",
-    "jose": "^1.27.3",
-    "ngrok": "^3.2.7",
-    "serve": "^11.3.2",
-    "typescript": "^3.9.7"
+    "express": "^4.21.1",
+    "jose": "^5.9.4",
+    "ngrok": "^4.3.3",
+    "serve": "^14.2.3",
+    "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "@types/express": "^4.17.8",
-    "@types/node": "^14.0.27",
-    "nodemon": "^2.0.6",
-    "ts-node": "^8.10.2"
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.5",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2"
   }
 }
